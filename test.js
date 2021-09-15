@@ -1,8 +1,16 @@
-const Discord = require('discord.js');
 
-const client = new Discord.Client();
-
-const { setup } = require("./index")
+const {Intents, Client} = require("discord.js")
+const {setup} = require("./index")
+const client = new Client({
+  intents: [
+				Intents.FLAGS.GUILDS,
+				Intents.FLAGS.GUILD_MEMBERS,
+				Intents.FLAGS.GUILD_MESSAGES,
+				Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+				Intents.FLAGS.GUILD_VOICE_STATES,
+				Intents.FLAGS.DIRECT_MESSAGES
+			],
+});
 
 setup({
 	client: client,
@@ -25,8 +33,8 @@ setup({
 			type: 'reply'
 		}
 	],
-	wlcm_channel: '863395716318625822',
-	leaveChannel: '',
+	wlcm_channel: '885113942903488534', //wlcm channel id
+	leave_channel: '885113942903488534', //leave channel id
 	wlcm_embedType: true,
 	wlcm_embed: {
 		color: 0x0099ff,
@@ -56,8 +64,15 @@ setup({
 	},
 	leave_msg: 'byeeeee {username}'
 });
+
 client.on('ready', () => {
 	console.log('hlo ' + client.user.username);
 });
 
-client.login('ODI0NDQ0NjcyMTYzNTc3ODc2.YFvd7w.kwXXVazxyrpfWDGK5Hmc5VjeTnI ');
+client.on("message", (message) => {
+  if(message.content === "!test"){
+   client.emit("guildMemberAdd", message.member)
+  }
+})
+
+client.login('//Token');

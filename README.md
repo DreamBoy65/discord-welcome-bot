@@ -6,10 +6,15 @@ this package needs discord.js v13.
 
 example:
 ```js
-const Discord = require('discord.js');
+const {Intents, Client} = require("discord.js")
 
-const client = new Discord.Client();
-
+const client = new Client({
+  intents: [
+				Intents.FLAGS.GUILDS,
+				Intents.FLAGS.GUILD_MEMBERS,
+				Intents.FLAGS.GUILD_MESSAGES,
+			],
+});
 const { setup } = require('discord-welcome-bot');
 
 setup({
@@ -106,5 +111,6 @@ any problem?
 Dm or pm me on discord.
 tag:
 @ᵈʳᵉᵃᵐ乡𝓟𝓻𝓲𝓷𝓬𝓮 ★᭄ꦿ᭄☆#1111
-
+Support Server:
+https://discord.gg/7UQaVPBQka
 :D

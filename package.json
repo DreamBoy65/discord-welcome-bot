@@ -1,6 +1,6 @@
 {
   "name": "discord-welcome-bot",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Hello! this npm package will allow you to create a welcome or leave bot without any code! package supports embed too!",
   "main": "index.js",
   "repository": {

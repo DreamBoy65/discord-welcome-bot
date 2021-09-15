@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
-
+const moment = require("moment")
 function setup(options) {
 	this.options = options || {};
 
@@ -70,7 +70,7 @@ function setup(options) {
 					.send(await modify(this.options.wlcm_msg, member));
 			} else {
 				member.guild.channels.cache.get(this.options.wlcm_channel).send({
-					embed: {
+					embeds: [{
 						description: await modify(
 							this.options.wlcm_embed.description,
 							member
@@ -99,7 +99,7 @@ function setup(options) {
 						thumbnail: {
 							url: await modify(this.options.wlcm_embed.thumbnail.url, member)
 						}
-					}
+					}]
 				});
 			}
 		}
@@ -112,7 +112,7 @@ function setup(options) {
 					.send(await modify(this.options.leave_msg, member));
 			} else {
 				member.guild.channels.cache.get(this.options.leave_channel).send({
-					embed: {
+					embeds: [{
 						description: await modify(
 							this.options.leave_embed.description,
 							member
@@ -141,15 +141,21 @@ function setup(options) {
 						thumbnail: {
 							url: await modify(this.options.leave_embed.thumbnail.url, member)
 						}
-					}
+					}]
 				});
 			}
 		}
   })
+  this.options.client.on("ready", () => {
+    console.log("[wlcm-bot] Ready.")
+  })
 }
 
 async function modify(str, member){
-  const owner = await member.guild.members.fetch(member.guild.ownerID);
+  const owner = await member.guild.members.fetch(member.guild.ownerId);
+
+
+    
   const modifiers = {
     "{avatar}": member.user.displayAvatarURL(),
     "{avatarDynamic}": member.user.displayAvatarURL({ dynamic: true, format: 'png'}),
@@ -166,7 +172,7 @@ async function modify(str, member){
     "{guildIconDynamic}": member.guild.iconURL({dynamic: true, format: 'png'}),
     "{guildName}": member.guild.name,
     "{guildOwner}":  owner.user.username,
-    "{guildOwnerNickname}": owner.displayName,
+    "{guildOwnerNickname}": owner.nickname,
     "{guildOwnerTag}": owner.user.tag,
     "{guildOwnerDiscrim}": owner.user.discriminator,
     "{guildOwnerAvatar}": owner.user.displayAvatarURL(),
@@ -183,7 +189,7 @@ async function modify(str, member){
     "{userAvatarDynamic}": member.user.displayAvatarURL({ dynamic: true, format: 'png'}),
     "{usermention}": member.toString(),
     "{memberJoinRank}": member.guild.memberCount,
-    "{memberJoinRankOrdinalized}": text.ordinalize(member.guild.memberCount)
+    "{memberJoinRankOrdinalized}": ordinalize(member.guild.memberCount)
   };
   const regexp = new RegExp(Object.keys(modifiers).join('|'), 'g');
 
