@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const { setup } = require('./index');
+const { setup } = require("./index")
 
 setup({
 	client: client,
@@ -60,4 +60,4 @@ client.on('ready', () => {
 	console.log('hlo ' + client.user.username);
 });
 
-client.login('//Token');
+client.login('ODI0NDQ0NjcyMTYzNTc3ODc2.YFvd7w.kwXXVazxyrpfWDGK5Hmc5VjeTnI ');

@@ -2,6 +2,8 @@ Hello!
 this npm package will allow you to create a welcome or leave bot without any code!
 package supports embed too!
 
+this package needs discord.js v13.
+
 example:
 ```js
 const Discord = require('discord.js');
