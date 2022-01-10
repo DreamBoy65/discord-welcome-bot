@@ -1,28 +1,31 @@
 {
   "name": "discord-welcome-bot",
-  "version": "1.0.8",
-  "description": "Hello! this npm package will allow you to create a welcome or leave bot without any code! package supports embed too!",
+  "version": "1.1.1",
+  "description": "create welcome bot in secs",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dreamboy-cyber/discord-welcome-bot.git"
+    "url": "git+https://github.com/DreamBoy65/discord-welcome-bot.git"
   },
-  "keywords": [],
-  "author": "Dream-prince",
+  "keywords": [
+    "welcomebot",
+    "welcome",
+    "discord",
+    "djs",
+    "djsv13"
+  ],
+  "author": "dream-prince",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
     "discord.js": "^13.1.0",
     "moment": "^2.29.1"
   },
-  "devDependencies": {
-    "node": "^16.9.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bugs": {
-    "url": "https://github.com/dreamboy-cyber/discord-welcome-bot/issues"
+    "url": "https://github.com/DreamBoy65/discord-welcome-bot/issues"
   },
-  "homepage": "https://github.com/dreamboy-cyber/discord-welcome-bot#readme"
+  "homepage": "https://github.com/DreamBoy65/discord-welcome-bot#readme"
 }

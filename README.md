@@ -1,3 +1,11 @@
+<p ="center">
+   <img src="https://img.shields.io/npm/dt/discord-welcome-bot?style=for-the-badge">
+   <img src="https://img.shields.io/npm/v/discord-welcome-bot?style=for-the-badge">
+   <a href = "https://discord.gg/7UQaVPBQka" > <img src="https://img.shields.io/badge/Server-Invite-brightgreen" href = "">
+   </a>
+</p>
+
+# Description 
 Hello!
 this npm package will allow you to create a welcome or leave bot without any code!
 package supports embed too!
@@ -109,8 +117,4 @@ Easy Config
 
 any problem?
 Dm or pm me on discord.
-tag:
-@ᵈʳᵉᵃᵐ乡𝓟𝓻𝓲𝓷𝓬𝓮 ★᭄ꦿ᭄☆#1111
-Support Server:
-https://discord.gg/7UQaVPBQka
 :D

@@ -1,6 +1,6 @@
 
 const {Intents, Client} = require("discord.js")
-const {setup} = require("./index")
+const { setup } = require("./index")
 const client = new Client({
   intents: [
 				Intents.FLAGS.GUILDS,
@@ -31,7 +31,7 @@ setup({
 			type: 'reply'
 		}
 	],
-	wlcm_channel: '885113942903488534', //wlcm channel id
+	wlcm_channel: '836870465078558740', //wlcm channel id
 	leave_channel: '885113942903488534', //leave channel id
 	wlcm_embedType: true,
 	wlcm_embed: {
@@ -42,7 +42,7 @@ setup({
 			name: 'Welcome to {guildName}',
 			icon_url: "{avatarDynamic}"
 		},
-		description: '{user}',
+		description: '{user} , {createdAt}',
 		thumbnail: {
 			url: '{avatarDynamic}'
 		},
@@ -67,10 +67,10 @@ client.on('ready', () => {
 	console.log('hlo ' + client.user.username);
 });
 
-client.on("message", (message) => {
+client.on("messageCreate", (message) => {
   if(message.content === "!test"){
    client.emit("guildMemberAdd", message.member)
   }
 })
 
-client.login('//Token');
+client.login('//token');
