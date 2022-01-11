@@ -2,6 +2,10 @@ const moment = require("moment");
 
 async function modify(str, member){
   const owner = await member.guild.members.fetch(member.guild.ownerId);
+  
+  if(!str) {
+    str = ""
+  }
 
   const modifiers = {
     "{avatar}": member.user.displayAvatarURL(),

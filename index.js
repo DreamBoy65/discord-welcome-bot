@@ -74,32 +74,32 @@ function setup(options) {
 				member.guild.channels.cache.get(this.options.wlcm_channel).send({
 					embeds: [{
 						description: await modify(
-							this.options.wlcm_embed.description,
+							this.options.wlcm_embed.description || "",
 							member
 						),
 						image: {
-							url: await modify(this.options.wlcm_embed.image.url, member)
+							url: await modify(this.options.wlcm_embed.image.url || "", member)
 						},
-						title: await modify(this.options.wlcm_embed.title, member),
+						title: await modify(this.options.wlcm_embed.title || "", member),
 						color: this.options.wlcm_embed.color || '#ffffff',
 						fields: this.options.wlcm_embed.fields,
 						author: {
-							name: await modify(this.options.wlcm_embed.author.name, member),
+							name: await modify(this.options.wlcm_embed.author.name || "", member),
 							icon_url: await modify(
-								this.options.wlcm_embed.author.icon_url,
+								this.options.wlcm_embed.author.icon_url || "",
 								member
 							)
 						},
 						footer: {
-							text: await modify(this.options.wlcm_embed.footer.text, member),
+							text: await modify(this.options.wlcm_embed.footer.text || "", member),
 
 							icon_url: await modify(
-								this.options.wlcm_embed.footer.icon_url,
+								this.options.wlcm_embed.footer.icon_url || "",
 								member
 							)
 						},
 						thumbnail: {
-							url: await modify(this.options.wlcm_embed.thumbnail.url, member)
+							url: await modify(this.options.wlcm_embed.thumbnail.url || "", member)
 						}
 					}]
 				});
@@ -117,32 +117,32 @@ function setup(options) {
 				member.guild.channels.cache.get(this.options.leave_channel).send({
 					embeds: [{
 						description: await modify(
-							this.options.leave_embed.description,
+							this.options.leave_embed.description || "",
 							member
 						),
 						image: {
-							url: await modify(this.options.leave_embed.image.url, member)
+							url: await modify(this.options.leave_embed.image?.url || "", member)
 						},
-						title: await modify(this.options.leave_embed.title, member),
+						title: await modify(this.options.leave_embed.title || "", member),
 						color: this.options.leave_embed.color || '#ffffff',
 						fields: this.options.leave_embed.fields,
 						author: {
-							name: await modify(this.options.leave_embed.author.name, member),
+							name: await modify(this.options.leave_embed.author?.name || "", member),
 							icon_url: await modify(
-								this.options.leave_embed.author.icon_url,
+								this.options.leave_embed.author?.icon_url || "",
 								member
 							)
 						},
 						footer: {
-							text: await modify(this.options.leave_embed.footer.text, member),
+							text: await modify(this.options.leave_embed.footer?.text || "", member),
 
 							icon_url: await modify(
-								this.options.leave_embed.footer.icon_url,
+								this.options.leave_embed.footer?.icon_url || "",
 								member
 							)
 						},
 						thumbnail: {
-							url: await modify(this.options.leave_embed.thumbnail.url, member)
+							url: await modify(this.options.leave_embed.thumbnail?.url || "", member)
 						}
 					}]
 				});
