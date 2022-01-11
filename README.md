@@ -47,7 +47,7 @@ setup({
 		}
 	],
 	wlcm_channel: '', //wlcm channel id
-	leaveChannel: '', //leave channel id
+	leave_channel: '', //leave channel id
 	wlcm_embedType: true,
 	wlcm_embed: {
 		color: 0x0099ff,
